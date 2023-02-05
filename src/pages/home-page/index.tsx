@@ -61,22 +61,6 @@ function HomePage () {
       phone: '12345678910',
       orderDate: '2022-01-17 09:12:21'
     },
-    {
-      server: '法邮海运',
-      waybillNo: 'EN0019038190FR',
-      relatedWaybill: '',
-      receiptName: '元康',
-      phone: '12345678910',
-      orderDate: '2022-01-17 09:12:21'
-    },
-    {
-      server: '法邮海运',
-      waybillNo: 'EN0019038190FR',
-      relatedWaybill: '',
-      receiptName: '元康',
-      phone: '12345678910',
-      orderDate: '2022-01-17 09:12:21'
-    }
   ])
   const [pageInfo, setPageInfo] = useState(
     {
