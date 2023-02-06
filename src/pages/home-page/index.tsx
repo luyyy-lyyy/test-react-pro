@@ -5,7 +5,7 @@ import style from './style.module.scss'
 import NewSearchBar from '../../components/newSearchBar'
 import NewDatePicker from '../../components/datePicker'
 import Card from '../../components/card'
-import CustomPagination from '../../components/custom-pagination'
+import Pagination from '../../components/pagination'
 interface IStateFuncToUpdate {
   (arg0: (prevState: any) => any): void;
 }
@@ -15,12 +15,13 @@ function HomePage () {
     pageSize: number,
     setFn: IStateFuncToUpdate
   ) => {
+    console.log(startPage);
+    
     setFn((prevState:any) => ({
       ...prevState,
       startPage: startPage,
       pageSize: pageSize
     }))
-    console.log(pageInfo.startPage);
     
   }
   // const updatePageInfo = (
@@ -36,7 +37,31 @@ function HomePage () {
   
   
   const [dateValue, setDateValue] = useState('')
-  const [listData, setListData] = useState([
+  const [listData] = useState([
+    {
+      server: '法邮海运',
+      waybillNo: 'EN0019038190FR',
+      relatedWaybill: '',
+      receiptName: '元康',
+      phone: '12345678910',
+      orderDate: '2022-01-17 09:12:21'
+    },
+    {
+      server: '法邮海运',
+      waybillNo: 'EN0019038190FR',
+      relatedWaybill: '',
+      receiptName: '元康',
+      phone: '12345678910',
+      orderDate: '2022-01-17 09:12:21'
+    },
+    {
+      server: '法邮海运',
+      waybillNo: 'EN0019038190FR',
+      relatedWaybill: '',
+      receiptName: '元康',
+      phone: '12345678910',
+      orderDate: '2022-01-17 09:12:21'
+    },
     {
       server: '法邮海运',
       waybillNo: 'EN0019038190FR',
@@ -66,7 +91,7 @@ function HomePage () {
     {
       startPage: 1,
       pageSize: 5,
-      totalCount: listData.length+5,
+      totalCount: listData.length,
       updateCount: 0
     }
   )
@@ -141,10 +166,10 @@ function HomePage () {
       }
     </div>
     <div className="pagination-box">
-      <CustomPagination
+      <Pagination
         pageInfo={pageInfo}
         changePageInfo={(startPage, pageSize) => changePageInfo(startPage, pageSize, setPageInfo)}
-      ></CustomPagination>
+      ></Pagination>
     </div>
   </div>
   )
